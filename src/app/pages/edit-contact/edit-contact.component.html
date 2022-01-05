@@ -6,7 +6,7 @@
       <ion-title>UNDER Devlopment</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card style="max-width: 30%;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;" >
+  <ion-card style="max-width: 30rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;" >
     <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
 
       <ion-item lines="full">
@@ -31,4 +31,10 @@
       </ion-row>
     </form>
   </ion-card>
+  <div style="max-width: 20rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;">
+
+
+    <ion-button type="submit" color="warning" fill="solid" expand="block" routerLink="/">Back to Home   <ion-icon slot="end" name="home"></ion-icon>
+    </ion-button>
+ </div>
 </ion-content>

@@ -3,11 +3,11 @@
 <ion-content color="dark">
   <ion-header>
     <ion-toolbar>
-      <ion-title>UNDER Devlopment</ion-title>
+      <ion-title>Contact Book</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-card style="max-width: 30%;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;" >
-    <ion-searchbar showCancelButton="always"></ion-searchbar>
+  <ion-card style="max-width: 30rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;" >
+    <ion-searchbar showCancelButton="always"  (keyup.enter)='search($event)' placeholder="Search Your contact email"></ion-searchbar>
 
     <ion-card-header>
       <ion-card-title>Add Your Contact</ion-card-title>
@@ -40,5 +40,16 @@
         </ion-col>
       </ion-row>
     </form>
+
   </ion-card>
+
+  <div style="max-width: 20rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;">
+
+     <ion-button type="submit" color="success" fill="outline" expand="block" routerLink="/phonebook">PhoneBook   <ion-icon slot="end" name="book"></ion-icon>
+     </ion-button><br>
+     <ion-button type="submit" color="warning" fill="solid" expand="block" routerLink="/">Back to Home   <ion-icon slot="end" name="home"></ion-icon>
+     </ion-button>
+  </div>
+
+
 </ion-content>

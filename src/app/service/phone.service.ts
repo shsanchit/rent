@@ -57,11 +57,29 @@ async deleteContact(id: string){
   this.presentToast('Contact Has been Deleted!!');
 
 }
+
+searchContact(sid){
+
+  return this.firestore.collection('contact', ref => ref.where('email', '>=', sid).where('email', '<=', sid)).snapshotChanges();
+
+
+
+}
 async presentToast(mes: any) {
   const toast = await this.toastController.create({
     message: mes,
     duration: 5000,
     color:'success',
+//    position: 'top',
+
+  });
+  toast.present();
+}
+async toastWarning(mes: any) {
+  const toast = await this.toastController.create({
+    message: mes,
+    duration: 3000,
+    color:'warning',
 //    position: 'top',
 
   });

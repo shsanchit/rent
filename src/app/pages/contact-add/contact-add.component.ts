@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { PhoneService } from 'src/app/service/phone.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ContactAddComponent implements OnInit {
   isSubmitted = false;
   uEmail!: boolean;
 
-  constructor(public formBuilder: FormBuilder,private phone:PhoneService) { }
+  constructor(public formBuilder: FormBuilder,private phone:PhoneService,private router:Router) { }
 
   ngOnInit() {
     this.contactForm = this.formBuilder.group({
@@ -32,7 +33,9 @@ export class ContactAddComponent implements OnInit {
   submitForm() {
     this.isSubmitted = true;
     if (!this.contactForm.valid) {
-      console.log('Please provide all the required values!')
+      //console.log('Please provide all the required values!')
+
+      this.phone.toastWarning('Please provide all the required values!')
     } else {
       console.log(this.contactForm.value);
       this.checkEmailID(this.contactForm.value['email'])
@@ -42,7 +45,10 @@ export class ContactAddComponent implements OnInit {
 
      this.phone.addContact(this.contactForm.value['name'],this.contactForm.value['mobile'],this.contactForm.value['email'])
     }else{
-      console.log('Please provide unique email!')
+     // console.log('Please provide unique email!')
+
+      this.phone.toastWarning('Please provide unique email!')
+
 
     }
 
@@ -55,5 +61,12 @@ export class ContactAddComponent implements OnInit {
       console.log(a.payload.exists)
       this.uEmail=a.payload.exists
     })
+  }
+  search(e){
+
+    console.log(e.target.value);
+    this.router.navigateByUrl('/contact/'+e.target.value)
+
+
   }
 }

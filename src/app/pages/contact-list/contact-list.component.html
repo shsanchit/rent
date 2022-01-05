@@ -1,6 +1,6 @@
 
 <ion-content color="dark">
-  <ion-list style="max-width: 30%;  margin: auto; margin-bottom: 1rem;" >
+  <ion-list style="max-width: 30rem;  margin: auto; margin-bottom: 1rem; margin-top: 1rem;" >
     <ion-list-header> Contact List</ion-list-header>
 
     <ion-item *ngFor="let item of lisiting" routerLink="{{item.id}}">
@@ -16,4 +16,10 @@
 
     </ion-item>
     </ion-list>
+    <div style="max-width: 20rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;">
+
+
+      <ion-button type="submit" color="warning" fill="solid" expand="block" routerLink="/">Back to Home   <ion-icon slot="end" name="home"></ion-icon>
+      </ion-button>
+   </div>
   </ion-content>

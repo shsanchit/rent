@@ -1,21 +1,61 @@
 <ion-grid fixed>
+  <div style="max-width: 20rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;">
+    <ion-button type="submit" color="warning" fill="outline" expand="block" routerLink="/">Home <ion-icon slot="end"
+        name="home"></ion-icon>
+    </ion-button>
+  </div>
   <ion-row>
     <ion-col size="6">
-<ion-card class="frontend" routerLink="/home">
-  <ion-card-header class="ion-text-center">
-    <ion-card-subtitle color="light" >Click Here </ion-card-subtitle>
-    <ion-card-title class="ion-text-uppercase" color="light">For Front End</ion-card-title>
-  </ion-card-header>
+      <ion-card class="frontend" routerLink="/home">
+        <ion-card-header class="ion-text-center">
+          <ion-card-subtitle color="light">Click Here </ion-card-subtitle>
+          <ion-card-title class="ion-text-uppercase" color="light">For Front End</ion-card-title>
+        </ion-card-header>
 
-</ion-card>
+      </ion-card>
     </ion-col>
     <ion-col size="6">
       <ion-card class="backend" routerLink="/contact">
         <ion-card-header class="ion-text-center">
-          <ion-card-subtitle color="light" >Click Here </ion-card-subtitle>
-    <ion-card-title class="ion-text-uppercase"  color="light">For Back End</ion-card-title>
+          <ion-card-subtitle color="light">Click Here </ion-card-subtitle>
+          <ion-card-title class="ion-text-uppercase" color="light">For Back End</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-col>
+  </ion-row>
+  <ion-row>
+
+    <ion-card class="tech" style="width:100%;">
+      <ion-card-header>
+        <ion-card-subtitle color="light">Hello there! 😀 <br>project is under coustrustion </ion-card-subtitle>
+        <ion-card-subtitle color="light"> and technologies i'm using <ion-icon name="planet"></ion-icon>
+        </ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ul style="list-style-type:disc;font-weight: normal; color: white; font-family: Ubuntu Mono;">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>SCSS</li>
+          <li>Javascript </li>
+          <li>Typescript </li>
+          <li>Angular 13 </li>
+          <li>Ionic 6 </li>
+          <li>Firstore </li>
+          <li>GCP/AWs </li>
+          <li>etc. </li>
+        </ul>
+        <a href="https://github.com/shsanchit/rent" target="_blank">
+          <ion-chip outline='true' color="light">
+            <ion-icon name="logo-github"></ion-icon>
+            <ion-label>Githhub</ion-label>
+          </ion-chip>
+        </a>
+      </ion-card-content>
+    </ion-card>
+    <!-- <div style="max-width: 20rem;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;">
+      <ion-button type="submit" color="warning" fill="outline" expand="block" routerLink="/">Back to Home   <ion-icon slot="end" name="home"></ion-icon>
+      </ion-button>
+   </div> -->
   </ion-row>
 </ion-grid>
