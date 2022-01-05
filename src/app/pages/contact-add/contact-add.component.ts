@@ -8,13 +8,14 @@ import { PhoneService } from 'src/app/service/phone.service';
   styleUrls: ['./contact-add.component.scss']
 })
 export class ContactAddComponent implements OnInit {
-  ionicForm!: FormGroup;
+  contactForm!: FormGroup;
   isSubmitted = false;
+  uEmail!: boolean;
 
   constructor(public formBuilder: FormBuilder,private phone:PhoneService) { }
 
   ngOnInit() {
-    this.ionicForm = this.formBuilder.group({
+    this.contactForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
@@ -25,18 +26,34 @@ export class ContactAddComponent implements OnInit {
 
 
   get errorControl() {
-    return this.ionicForm.controls;
+    return this.contactForm.controls;
   }
 
   submitForm() {
     this.isSubmitted = true;
-    if (!this.ionicForm.valid) {
+    if (!this.contactForm.valid) {
       console.log('Please provide all the required values!')
     } else {
-      console.log(this.ionicForm.value);
+      console.log(this.contactForm.value);
+      this.checkEmailID(this.contactForm.value['email'])
 
-      this.phone.addContact(this.ionicForm.value['name'],this.ionicForm.value['mobile'],this.ionicForm.value['email'])
+      if(this.uEmail==false){
+
+
+     this.phone.addContact(this.contactForm.value['name'],this.contactForm.value['mobile'],this.contactForm.value['email'])
+    }else{
+      console.log('Please provide unique email!')
 
     }
+
+    }
+  }
+
+  checkEmailID(id: string){
+
+    this.phone.readContactId(id).subscribe(a=>{
+      console.log(a.payload.exists)
+      this.uEmail=a.payload.exists
+    })
   }
 }

@@ -1,16 +1,19 @@
 
 <ion-content color="dark">
   <ion-list style="max-width: 30%;  margin: auto; margin-bottom: 1rem;" >
-    <ion-list-header> User List</ion-list-header>
+    <ion-list-header> Contact List</ion-list-header>
 
     <ion-item *ngFor="let item of lisiting" routerLink="{{item.id}}">
       <ion-avatar slot="start">
         <img src="../../../assets/programmer.png" alt="profile_picture"/>
       </ion-avatar>
       <ion-label>
-        <!-- <h2 >{{item.name}}</h2>
-        <p>{{item.mobile}}</p> -->
+        <h2 >{{item.name}}</h2>
+        <p>{{item.mobile}}</p>
       </ion-label>
+      <ion-icon name="create-sharp"  slot="end" routerLink="/{{item.id}}"></ion-icon>
+      <ion-icon name="trash"  slot="end" (click)="deleteContact(item.id)"></ion-icon>
+
     </ion-item>
     </ion-list>
   </ion-content>

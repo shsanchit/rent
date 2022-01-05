@@ -7,36 +7,26 @@
     </ion-toolbar>
   </ion-header>
   <ion-card style="max-width: 30%;  margin: auto; margin-bottom: 1rem;margin-top: 2rem;" >
-    <ion-searchbar showCancelButton="always"></ion-searchbar>
-
-    <ion-card-header>
-      <ion-card-title>Add Your Contact</ion-card-title>
-    </ion-card-header>
     <form [formGroup]="contactForm" (ngSubmit)="submitForm()" novalidate>
 
       <ion-item lines="full">
         <ion-label position="floating">Name</ion-label>
-        <ion-input formControlName="name" type="text"></ion-input>
+        <ion-input formControlName="name" type="text" value="{{name}}"></ion-input>
       </ion-item>
-
-
-
-      <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
-        <ion-input formControlName="email" type="email"></ion-input>
-      </ion-item>
-
-
 
       <ion-item lines="full">
         <ion-label position="floating">Mobile</ion-label>
-        <ion-input maxlength="10" formControlName="mobile" type="text" required></ion-input>
+        <ion-input maxlength="10" formControlName="mobile" type="text" value="{{mobile}}" required></ion-input>
       </ion-item>
 
+      <ion-item lines="full">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input  type="email" value="{{email}}" disabled></ion-input>
+      </ion-item>
 
       <ion-row>
         <ion-col>
-          <ion-button type="submit" color="danger" expand="block">Submit</ion-button>
+          <ion-button type="submit" color="danger" expand="block">Update Now</ion-button>
         </ion-col>
       </ion-row>
     </form>

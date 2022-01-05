@@ -15,6 +15,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactListComponent } from './pages/contact-list/contact-list.component';
+import { EditContactComponent } from './pages/edit-contact/edit-contact.component';
+import { ContactSearchComponent } from './pages/contact-search/contact-search.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ContactListComponent } from './pages/contact-list/contact-list.componen
     PostDetailsComponent,
     LandingComponent,
     ContactAddComponent,
-    ContactListComponent
+    ContactListComponent,
+    EditContactComponent,
+    ContactSearchComponent
   ],
   imports: [
     BrowserModule,
